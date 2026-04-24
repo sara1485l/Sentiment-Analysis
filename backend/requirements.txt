@@ -1,0 +1,7 @@
+Flask==2.3.0
+Flask-CORS==4.0.0
+TextBlob==0.17.1
+
+sumy==0.12.0
+
+nltk==3.8.1

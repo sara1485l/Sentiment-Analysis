@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Review Analyzer - NLP System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">📊 Smart Review Analyzer</h1>
+            <p class="tagline">Powered by NLP Technology</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="section-card">
+                <h2>📝 Enter Your Reviews</h2>
+                <p class="section-subtitle">Paste multiple reviews, separated by new lines</p>
+                
+                <textarea 
+                    id="reviewInput" 
+                    class="textarea-input" 
+                    placeholder="Enter reviews here (one per line)&#10;Example:&#10;This product is amazing! I love it.&#10;Terrible quality, very disappointed.&#10;It's okay, nothing special."
+                    rows="6"></textarea>
+                
+                <div class="button-group">
+                    <button id="analyzeBtn" class="btn btn-primary">🚀 Analyze Reviews</button>
+                    <button id="clearBtn" class="btn btn-secondary">🗑️ Clear</button>
+                </div>
+                
+                <div id="loadingSpinner" class="spinner hidden">
+                    <div class="spinner-animation"></div>
+                    <p>Analyzing reviews...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            
+            <!-- Statistics Section -->
+            <div class="results-grid">
+                <div class="section-card">
+                    <h2>📊 Sentiment Analysis</h2>
+                    <div class="stats-container">
+                        <div class="stat-box positive">
+                            <div class="stat-number" id="positiveCount">0</div>
+                            <div class="stat-label">Positive</div>
+                            <div class="stat-percent" id="positivePercent">0%</div>
+                        </div>
+                        <div class="stat-box negative">
+                            <div class="stat-number" id="negativeCount">0</div>
+                            <div class="stat-label">Negative</div>
+                            <div class="stat-percent" id="negativePercent">0%</div>
+                        </div>
+                        <div class="stat-box neutral">
+                            <div class="stat-number" id="neutralCount">0</div>
+                            <div class="stat-label">Neutral</div>
+                            <div class="stat-percent" id="neutralPercent">0%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="sentimentChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Keywords Section -->
+                <div class="section-card">
+                    <h2>🔑 Top Keywords</h2>
+                    <div id="keywordsList" class="keywords-list">
+                        <!-- Keywords will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="section-card">
+                <h2>📄 Summary</h2>
+                <p id="summaryText" class="summary-text">
+                    <!-- Summary will be populated here -->
+                </p>
+            </div>
+
+            <!-- Reviews Details Section -->
+            <div class="section-card">
+                <h2>🔍 Review Details</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Reviews</button>
+                    <button class="filter-btn" data-filter="Positive">✅ Positive</button>
+                    <button class="filter-btn" data-filter="Negative">❌ Negative</button>
+                    <button class="filter-btn" data-filter="Neutral">➖ Neutral</button>
+                </div>
+                
+                <div id="reviewsList" class="reviews-list">
+                    <!-- Reviews will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Empty State -->
+        <section id="emptyState" class="empty-state">
+            <div class="empty-icon">📋</div>
+            <h3>No Analysis Yet</h3>
+            <p>Enter some reviews and click "Analyze Reviews" to get started!</p>
+        </section>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden">
+            <span id="errorText"></span>
+            <button class="error-close" onclick="closeError()">×</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Smart Review Analyzer | NLP Team Project</p>
+    </footer>
+
+    <!-- Load Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Load main application script -->
+    <script src="script.js"></script>
+</body>
+</html>
