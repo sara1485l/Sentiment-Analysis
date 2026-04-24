@@ -36,7 +36,7 @@ Results & Visualization
 4. **Visualization**: Charts and statistics display
 
 **Technology Stack:**
-- Backend: Python, Flask, TextBlob, scikit-learn, sumy
+- Backend: Python, Flask, TextBlob, sumy
 - Frontend: HTML, CSS, JavaScript, Chart.js
 - Communication: REST API (JSON)
 
